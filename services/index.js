@@ -74,3 +74,12 @@ export const getPostDetails = async (slug) => {
     const results = await request(graphqlAPI, query, { slug })
     return results.post
 }
+
+export const submitComment = async (obj) => {
+    const result = await fetch('/api/comments', {
+        method: 'POST',
+        body: JSON.stringify(obj)
+    })
+
+    return result.json()
+}

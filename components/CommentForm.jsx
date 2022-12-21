@@ -10,19 +10,26 @@ const CommentForm = ({ slug }) => {
   const emailEl = useRef()
   const storeDataEl = useRef()
 
-  handleCommentSubmission = () => {
+  const handleCommentSubmission = () => {
     setError(false)
     const { value: comment } = commentEl.current
     const { value: name } = commentEl.current
     const { value: email } = commentEl.current
+    const { checked: storeData } = storeDataEl.current
 
     if (!comment || !name || !email) {
       setError(true)
       return;
     }
 
-    const commentObj = {
-      name, email, comment, slug
+    const commentObj = { name, email, comment, slug }
+
+    if (storeData) {
+      localStorage.setItem('name', name)
+      localStorage.setItem('email', email)
+    } else {
+      localStorage.removeItem('name', name)
+      localStorage.removeItem('email', email)
     }
 
 
@@ -52,6 +59,23 @@ const CommentForm = ({ slug }) => {
           placeholder='Email'
           name='email'
         />
+      </div>
+      <div className='grid grid-cols-1 gap-4 mb-4'>
+        <div className='flex flex-row items-center mt-2'>
+          <input
+            ref={storeDataEl} type='checkbox'
+            id='storeData'
+            name='storeData'
+            value='true'
+            className='cursor-pointer'
+          />
+          <label
+            className='text-gray-500 cursor-pointer ml-2 text-sm tracking-normal'
+            htmlFor='storeData'
+          >
+            Save my email and name for the next time I comment.
+          </label>
+        </div>
       </div>
       {error && <p className='text-xs text-red-500'>All fields are required.</p>}
       <div className='mt-8'>
