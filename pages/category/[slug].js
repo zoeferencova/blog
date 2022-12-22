@@ -6,7 +6,7 @@ import { PostCard } from '../../components';
 const CategoryPost = ({ posts }) => {
     return (
         <div className='mb-10 px-10 sm:px-20'>
-            <div className='grid grid-cols-1 lg:grid-cols-2 gap-x-36 gap-y-20'>
+            <div className='grid grid-cols-1 lg:grid-cols-2 gap-x-36 gap-y-16 lg:gap-y-20'>
                 {posts.map((post, index) => (<PostCard post={post.node} key={index} />))}
             </div>
         </div>

@@ -4,7 +4,7 @@ import Link from 'next/link'
 const PostCard = ({ post }) => {
     return (
         <Link href={`/post/${post.slug}`}>
-            <div className='mt-5 flex flex-col cursor-pointer sm:mt-0 sm:flex-row lg:items-center'>
+            <div className='mt-3 flex flex-col cursor-pointer sm:mt-0 sm:flex-row lg:items-center'>
                 <img
                     src={post.featuredImage.url}
                     alt={post.title}

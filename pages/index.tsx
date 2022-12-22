@@ -9,7 +9,7 @@ export default function Home({ posts }: any) {
         <title>tada_</title>
         <link rel='icon' href='/favicon.ico' />
       </Head>
-      <div className='grid grid-cols-1 lg:grid-cols-2 gap-x-36 gap-y-20'>
+      <div className='grid grid-cols-1 lg:grid-cols-2 gap-x-36 gap-y-14 lg:gap-y-20'>
         {posts.map((post: any, index: any) => (<PostCard post={post.node} key={index} />))}
       </div>
     </div>
