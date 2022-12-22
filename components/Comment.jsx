@@ -4,6 +4,7 @@ import parse from 'html-react-parser'
 
 import { getComments } from '../services'
 
+
 const Comment = ({ slug }) => {
     const [comments, setComments] = useState([]);
 
