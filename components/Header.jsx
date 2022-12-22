@@ -16,9 +16,7 @@ const Header = () => {
     }, [])
 
     const router = useRouter()
-    const { pid } = router.query
-
-    console.log(pid)
+    const { slug } = router.query
 
     return (
         <div className="px-10 pt-8 sm:px-20 sm:mb-10 ">
@@ -28,10 +26,17 @@ const Header = () => {
                         <Image src={logo} alt='tada blog' width='95' />
                     </Link>
                 </div>
-                <div className="">
-                    <span className='cursor-pointer mt-2 mr-4 align-middle md:ml-4'>All Posts</span>
+                <div className="whitespace-nowrap overflow-x-auto py-1 scroll-container">
+                    <Link href='/'>
+                        <span className={`${slug === undefined && 'menu-current'} menu-item`}>All Posts</span>
+                    </Link>
                     {categories.map((category, index) => (
-                        <Link key={index} href={`/category/${category.slug}`}><span className={`cursor-pointer mt-2 mr-4 align-middle md:ml-4`}>{category.name}</span></Link>
+                        <Link
+                            key={index}
+                            href={`/category/${category.slug}`}
+                        >
+                            <span className={`${slug === category.slug && 'menu-current'} menu-item`}>{category.name}</span>
+                        </Link>
                     ))}
                 </div>
             </div>
