@@ -92,16 +92,19 @@ const CommentForm = ({ slug }) => {
           </label>
         </div>
       </div>
-      {error && <p className='text-xs text-red-500'>All fields are required.</p>}
       <div className='mt-8'>
         <button
           type='button'
           onClick={handleCommentSubmission}
-          className='transition bg-gray-800 rounded-lg px-4 py-2 cursor-pointer text-white font-semibold text-sm tracking-wide'
+          className='bg-gray-800 rounded-lg px-4 py-2 cursor-pointer text-white font-semibold text-sm tracking-wide'
         >
           Submit
         </button>
-        {showSuccessMessage && <span className='float-right mt-2 text-green-300'>Comment submitted for review</span>}
+        {showSuccessMessage || error &&
+          <span className={`float-right mt-2 text-green-300`}>
+            {error ? 'All fields are required' : 'Comment submitted for review'}
+          </span>
+        }
       </div>
     </div>
   )
