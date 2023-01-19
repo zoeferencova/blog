@@ -6,6 +6,9 @@ module.exports = {
     './app/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
+    fontFamily: {
+      'serif': ['Source Serif Pro', 'Georgia']
+    },
     extend: {},
   },
   plugins: [

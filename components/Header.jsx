@@ -1,43 +1,28 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { useRouter } from 'next/router'
 
-import { getCategories } from '../services'
+import logo from '../images/logo.png'
 
-import logo from '../images/thick-logo.png'
-
-const Header = () => {
-    const [categories, setCategories] = useState([])
-
-    useEffect(() => {
-        getCategories()
-            .then((newCategories) => setCategories(newCategories))
-    }, [])
-
-    const router = useRouter()
-    const { slug } = router.query
-
+const Header = ({ firstPath }) => {
+    console.log(firstPath)
     return (
-        <div className="px-10 pt-8 sm:px-20 sm:mb-10 ">
-            <div className="w-full py-8 sm:flex sm:justify-between sm:items-center">
-                <div className="block mb-8 sm:mb-0">
+        <div className="px-10 py-8 sm:px-20 ">
+            <div className="w-full py-8 flex justify-between items-center">
+                <div>
                     <Link href='/'>
                         <Image src={logo} alt='tada blog' width='95' />
                     </Link>
                 </div>
-                <div className="whitespace-nowrap overflow-x-auto py-1 scroll-container">
-                    <Link href='/'>
-                        <span className={`${slug === undefined && 'menu-current'} menu-item`}>All Posts</span>
-                    </Link>
-                    {categories.map((category, index) => (
-                        <Link
-                            key={index}
-                            href={`/category/${category.slug}`}
-                        >
-                            <span className={`${slug === category.slug && 'menu-current'} menu-item`}>{category.name}</span>
-                        </Link>
-                    ))}
+                <div className='inline-block cursor-pointer sm:hidden'>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </div>
+                <div className='hidden sm:flex sm:items-center header-links'>
+                    <Link href='/' className={`${(firstPath === '' || firstPath === 'category') && 'header-nav-current'} header-nav-item`}>Blog</Link>
+                    <Link href='/learning' className={`${firstPath === 'learning' && 'header-nav-current'} header-nav-item`}>Learning</Link>
+                    <Link href='/resources' className={`${firstPath === 'resources' && 'header-nav-current'} header-nav-item`}>Resources</Link>
                 </div>
             </div>
         </div>

@@ -11,8 +11,8 @@ const PostCard = ({ post }) => {
                     className='w-full h-52 object-cover rounded-lg sm:w-52'
                 />
                 <div className='mt-8 sm:mt-0 sm:pl-12'>
-                    <h1 className='text-[0.92rem] mb-3 font-medium'>{post.title}</h1>
-                    <p className='text-gray-500 text-[0.92rem] sm:line-clamp-5'>{post.excerpt}</p>
+                    <h2 className='text-xl mb-3 font-serif'>{post.title}</h2>
+                    <p className='text-[0.92rem] sm:line-clamp-5'>{post.excerpt}</p>
                 </div>
             </div >
         </Link>

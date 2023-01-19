@@ -1,10 +1,19 @@
 import React from 'react'
-import { Header } from './'
+import { useRouter } from 'next/router'
+import { BlogNav, Header, PageTitle } from './'
 
 const Layout = ({ children }) => {
+
+    const router = useRouter()
+    const { pathname } = router
+    const { slug } = router.query
+    const firstPath = pathname.split('/')[1];
+
     return (
         <>
-            <Header />
+            <Header firstPath={firstPath} />
+            <PageTitle firstPath={firstPath} />
+            {(firstPath === '' || firstPath === 'category') && <BlogNav slug={slug} />}
             {children}
         </>
     )
