@@ -132,3 +132,43 @@ export const getCategoryPost = async (slug) => {
     const result = await request(graphqlAPI, query, { slug });
     return result.postsConnection.edges;
 };
+
+
+export const getLearningTopics = async () => {
+    const query = gql`
+        query GetLearningTopics {
+            topicCategories {
+                name
+                    icon {
+                    url
+                }
+                topics {
+                    id
+                    name
+                    slug
+                }
+            }
+        }
+        
+    `
+
+    const results = await request(graphqlAPI, query)
+    return results
+}
+
+export const getTopicDetails = async (slug) => {
+    const query = gql`
+        query GetTopicDetails($slug: String!) {
+            topic(where: { slug: $slug }) {
+                slug
+                name
+                content {
+                    raw
+                }
+            }
+        }
+    `
+
+    const results = await request(graphqlAPI, query, { slug })
+    return results.topic
+}

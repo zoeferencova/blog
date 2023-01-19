@@ -17,7 +17,7 @@ const PageTitle = ({ firstPath }) => {
     return (
         <div className='px-10 sm:px-20'>
             <h1 className='text-4xl sm:text-[2.5rem] font-medium'>{renderPageTitle(firstPath)}</h1>
-            {firstPath === 'learning' && <h2 className='pt-3 pb-10 text-xl sm:text-[1.45rem] text-gray-700 font-serif'>Data viz key concepts and theory</h2>}
+            {firstPath === 'learning' && <h2 className='pt-7 pb-10 text-xl sm:text-[1.45rem] text-gray-700 font-serif'>Data viz key concepts and theory</h2>}
         </div>
 
     );
