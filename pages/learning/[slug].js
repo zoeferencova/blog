@@ -1,11 +1,12 @@
 import React from 'react'
+import { RichText } from '../../components'
 import { getLearningTopics, getTopicDetails } from '../../services'
 
 const LearningPage = ({ topic }) => {
-    console.log(topic)
     return (
-        <div>
-            <h2>{topic.name}</h2>
+        <div className='mb-8 mx-auto max-w-[54rem] pt-5 px-10 sm:px-20'>
+            <h1 className='pb-10 font-medium text-4xl'>{topic.name}</h1>
+            <RichText rawText={topic} />
         </div>
     )
 }

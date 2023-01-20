@@ -14,6 +14,10 @@ body {
     letter-spacing: 0.006rem;
 }
 
+.font-mono {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
 %smooth-fonts {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
