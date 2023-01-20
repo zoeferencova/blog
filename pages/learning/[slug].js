@@ -2,8 +2,9 @@ import React from 'react'
 import { getLearningTopics, getTopicDetails } from '../../services'
 
 const LearningPage = ({ topic }) => {
+    console.log(topic)
     return (
-        <div className=''>
+        <div>
             <h2>{topic.name}</h2>
         </div>
     )
@@ -12,8 +13,8 @@ const LearningPage = ({ topic }) => {
 export default LearningPage
 
 export async function getStaticPaths() {
-    const { topicCategories } = await getLearningTopics()
-    const paths = topicCategories.map(cat => cat.topics.map(({ slug }) => ({ params: { slug } })))[0]
+    const topicCategories = await getLearningTopics()
+    const paths = topicCategories.map(cat => cat.topics.map(({ slug }) => ({ params: { slug } }))[0])
     return {
         paths,
         fallback: true

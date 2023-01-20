@@ -12,7 +12,7 @@ const Layout = ({ children }) => {
     return (
         <>
             <Header firstPath={firstPath} />
-            <PageTitle firstPath={firstPath} />
+            <PageTitle slug={slug} firstPath={firstPath} />
             {(firstPath === '' || firstPath === 'category') && <BlogNav slug={slug} />}
             {children}
         </>

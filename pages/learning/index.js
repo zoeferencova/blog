@@ -1,23 +1,11 @@
 import React from 'react'
 import { getLearningTopics } from "../../services"
+import { LinkList } from '../../components'
 
 const LearningPage = ({ topicCategories }) => {
-    const renderTopicCategories = (topicCat, i) => {
-        return (
-            <div key={i}>
-                <h2>{topicCat.name}</h2>
-                {topicCat.topics.map((topic, i) => renderTopicLink(topic, i))}
-            </div>)
-    }
-
-    const renderTopicLink = (topic, i) => {
-        console.log(topic)
-        return <a href={`/learning/${topic.slug}`} key={i} > {topic.name}</a >
-    }
-
     return (
-        <div className="mb-10 px-10 sm:px-20">
-            {topicCategories.map((topicCat, i) => renderTopicCategories(topicCat, i))}
+        <div className="mt-4 mb-10 px-10 sm:px-20">
+            {topicCategories.map((topicCat, i) => <LinkList key={i} categoryTitle={topicCat.name} icon={topicCat.icon} links={topicCat.topics} page='learning' />)}
         </div>
     )
 }
@@ -25,7 +13,7 @@ const LearningPage = ({ topicCategories }) => {
 export default LearningPage
 
 export async function getStaticProps() {
-    const { topicCategories } = (await getLearningTopics()) || []
+    const topicCategories = (await getLearningTopics()) || []
     return {
         props: { topicCategories }
     }

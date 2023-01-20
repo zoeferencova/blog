@@ -1,8 +1,8 @@
 import React from 'react'
 
-const PageTitle = ({ firstPath }) => {
+const PageTitle = ({ firstPath, slug }) => {
 
-    const renderPageTitle = path => {
+    const renderPageTitle = (path, slug) => {
         switch (path) {
             case '':
             case 'category':
@@ -10,14 +10,16 @@ const PageTitle = ({ firstPath }) => {
             case 'resources':
                 return 'Resources'
             case 'learning':
-                return 'Learning'
+                if (!slug) {
+                    return 'Learning'
+                }
         }
     }
 
     return (
         <div className='px-10 sm:px-20'>
-            <h1 className='text-4xl sm:text-[2.5rem] font-medium'>{renderPageTitle(firstPath)}</h1>
-            {firstPath === 'learning' && <h2 className='pt-7 pb-10 text-xl sm:text-[1.45rem] text-gray-700 font-serif'>Data viz key concepts and theory</h2>}
+            <h1 className='text-4xl sm:text-[2.5rem] font-medium'>{renderPageTitle(firstPath, slug)}</h1>
+            {(firstPath === 'learning' && !slug) && <h2 className='pt-6 pb-10 text-xl sm:text-[1.4rem] text-gray-700 font-serif'>Data viz key concepts and theory</h2>}
         </div>
 
     );

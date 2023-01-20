@@ -139,7 +139,7 @@ export const getLearningTopics = async () => {
         query GetLearningTopics {
             topicCategories {
                 name
-                    icon {
+                icon {
                     url
                 }
                 topics {
@@ -153,7 +153,7 @@ export const getLearningTopics = async () => {
     `
 
     const results = await request(graphqlAPI, query)
-    return results
+    return results.topicCategories
 }
 
 export const getTopicDetails = async (slug) => {
@@ -171,4 +171,24 @@ export const getTopicDetails = async (slug) => {
 
     const results = await request(graphqlAPI, query, { slug })
     return results.topic
+}
+
+export const getResources = async () => {
+    const query = gql`
+        query GetResources {
+            resources {
+                categoryIcon {
+                  url
+                }
+                resourceCategory
+                resourceList {
+                  raw
+                }
+            }
+        }
+        
+    `
+
+    const results = await request(graphqlAPI, query)
+    return results.resources
 }
