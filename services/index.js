@@ -15,8 +15,8 @@ export const getPosts = async () => {
                         featuredImage {
                             url
                         }
-                        secondaryImage {
-                            url
+                        imageBackground {
+                            hex
                         }
                         categories {
                             name
@@ -57,8 +57,8 @@ export const getPostDetails = async (slug) => {
                 featuredImage {
                     url
                 }
-                secondaryImage {
-                    url
+                imageBackground {
+                    hex
                 }
                 categories {
                     name
@@ -116,8 +116,8 @@ export const getCategoryPost = async (slug) => {
               featuredImage {
                 url
               }
-              secondaryImage {
-                url
+              imageBackground {
+                hex
               }
               categories {
                 name

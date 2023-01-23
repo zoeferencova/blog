@@ -8,16 +8,11 @@ const PostDetails = ({ post }) => {
         <div className='mb-20'>
             <h1 className='font-serif pb-3 font-medium text-3xl'>{post.title}</h1>
             <span className='pb-10 text-gray-500 block'>{moment(post.createdAt).format('MMM DD, YYYY')}</span>
-            <div className='flex flex-row justify-between mb-10'>
+            <div className={`h-56 p-10 sm:h-96 mb-10 flex items-center justify-center rounded-xl sm:p-12 bg-[${post.imageBackground.hex}]`}>
                 <img
                     src={post.featuredImage.url}
                     alt={post.title}
-                    className='w-[47%] rounded-lg'
-                />
-                <img
-                    src={post.secondaryImage.url}
-                    alt={post.title}
-                    className='w-[47%] rounded-lg'
+                    className='max-h-full max-w-full rounded-lg'
                 />
             </div>
             <RichText rawText={post} />
