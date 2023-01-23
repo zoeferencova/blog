@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import hljs from 'highlight.js';
-import { Carousel } from 'flowbite-react';
+import { Carousel, Card } from 'flowbite-react';
 
 const RichText = ({ rawText }) => {
 
@@ -19,7 +19,6 @@ const RichText = ({ rawText }) => {
         if (className === 'carousel-end') {
             return createImageCarousel(images)
         }
-
 
         // Save all text
         let modifiedText = text;
@@ -60,11 +59,11 @@ const RichText = ({ rawText }) => {
         // Convert object to JSX by type
         switch (type) {
             case 'heading-three':
-                return <h3 key={index} className={`${className} text-2xl font-medium mb-6 pt-6`}>{modifiedText.map((item, i) => <React.Fragment key={i}>{item}</React.Fragment>)}</h3>;
+                return <h3 key={index} className={`${className} text-2xl font-medium mb-6 pt-10`}>{modifiedText.map((item, i) => <React.Fragment key={i}>{item}</React.Fragment>)}</h3>;
             case 'paragraph':
                 return <p key={index} className={`${className} text-[17px] mb-6 leading-[1.64rem]`}>{modifiedText.map((item, i) => <React.Fragment key={i}>{item}</React.Fragment>)}</p>;
             case 'heading-four':
-                return <h4 key={index} className={`${className} text-md font-medium mb-4`}>{modifiedText.map((item, i) => <React.Fragment key={i}>{item}</React.Fragment>)}</h4>;
+                return <h4 key={index} className={`${className} text-2xl font-medium pt-4 mb-4`}>{modifiedText.map((item, i) => <React.Fragment key={i}>{item}</React.Fragment>)}</h4>;
             case 'image':
                 return (
                     <img
@@ -77,15 +76,26 @@ const RichText = ({ rawText }) => {
                     />
                 );
             case 'code-block':
-                return <div key={index} className={`${className} px-4 pt-3 pb-5 mt-8 rounded-lg bg-[#1a2b34]`}><pre><code key={index} className='text-[13px]'>{modifiedText.map((item, i) => <React.Fragment key={i}>{item}</React.Fragment>)}</code></pre></div>;
+                return <div key={index} className={`${className} px-4 pt-3 pb-5 mt-10 rounded-lg bg-[#1a2b34]`}><pre><code key={index} className='text-[13px]'>{modifiedText.map((item, i) => <React.Fragment key={i}>{item}</React.Fragment>)}</code></pre></div>;
+            case 'block-quote':
+                const splitText = text[0].split(/\s*[\[\]]\s*/).filter(Boolean);
+                return (
+                    <Card href="#" className='mb-5 hover:bg-white hover:cursor-auto'>
+                        <h5 className="text-xl font-serif text-gray-900 dark:text-white">
+                            {splitText[0]}
+                        </h5>
+                        <p className="font-normal text-sm text-gray-700 dark:text-gray-400">
+                            {splitText[1]}
+                        </p>
+                    </Card>
+                )
             default:
                 return modifiedText;
         }
     };
 
     const createImageCarousel = (images) => {
-        console.log(images)
-        return (<div className="h-[240px] sm:h-[380px] md:h-[480px] flex items-top">
+        return (<div className="h-[420px] md:h-[480px] flex items-top mb-10">
             <Carousel>
                 {images.filter(img => img.type === 'image').map(img => <img src={img.src} alt="..." />)}
             </Carousel>

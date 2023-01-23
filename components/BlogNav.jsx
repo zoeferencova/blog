@@ -1,18 +1,10 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
+import { useRouter } from 'next/router'
 import Link from 'next/link'
 
-import { getCategories } from '../services'
-
-const BlogNav = ({ slug }) => {
-    const [categories, setCategories] = useState([])
-
-    useEffect(() => {
-        getCategories()
-            .then((newCategories) => setCategories(newCategories))
-    }, [])
-
+const BlogNav = ({ categories, slug }) => {
     return (
-        <div className="w-full px-10 pt-8 pb-12 sm:px-20">
+        <div className="w-full pt-8 pb-12 px-10 sm:px-20 transition animate-fade">
             <div className="whitespace-nowrap overflow-x-auto py-2 scroll-container">
                 <Link href='/'>
                     <span className={`${slug === undefined && 'blog-nav-current'} blog-nav-item`}>All Posts</span>
@@ -30,5 +22,4 @@ const BlogNav = ({ slug }) => {
     );
 }
 
-export default BlogNav
-
+export default BlogNav;

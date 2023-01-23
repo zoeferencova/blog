@@ -10,7 +10,20 @@ module.exports = {
     fontFamily: {
       'serif': ['Source Serif Pro', 'Georgia'],
     },
-    extend: {},
+    extend: {
+      // that is animation class
+      animation: {
+        fade: 'fadeIn 0.2s ease-in',
+      },
+
+      // that is actual animation
+      keyframes: theme => ({
+        fadeIn: {
+          '0%': { opacity: 0 },
+          '100%': { opacity: 1 },
+        },
+      }),
+    },
   },
   plugins: [
     require('@tailwindcss/line-clamp'),

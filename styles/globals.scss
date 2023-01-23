@@ -80,3 +80,55 @@ a {
     scrollbar-width: none;
     /* Firefox */
 }
+
+.article-resource,
+.book-resource,
+.podcast-resource,
+.video-resource,
+.website-resource {
+    font-size: 0.93rem !important;
+    margin-bottom: 7px !important;
+}
+
+.article-resource a,
+.book-resource a,
+.podcast-resource a,
+.video-resource a,
+.website-resource a {
+    color: rgb(31 41 55);
+    border-bottom: 1px solid rgb(31 41 55);
+}
+
+.article-resource::before {
+    background-image: url('../images/article.png');
+}
+
+.book-resource::before {
+    background-image: url('../images/book.png')
+}
+
+.podcast-resource::before {
+    background-image: url('../images/podcast.png')
+}
+
+.video-resource::before {
+    background-image: url('../images/video.png')
+}
+
+.website-resource::before {
+    background-image: url('../images/website.png')
+}
+
+.article-resource::before,
+.book-resource::before,
+.podcast-resource::before,
+.video-resource::before,
+.website-resource::before {
+    background-size: 25px;
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    content: "";
+    margin-bottom: -8px;
+    margin-right: 10px;
+}
