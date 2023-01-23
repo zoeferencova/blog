@@ -22,7 +22,7 @@ const Header = ({ firstPath }) => {
                     <div className={`${hamburgerLine} ${hamburgerOpen && "-rotate-45 -translate-y-[7px]"}`} />
                 </button>
                 <div className={`${!hamburgerOpen && 'opacity-0'} ${hamburgerOpen && 'opacity-100 transition ease duration-300 flex-col items-end'} flex h-7 w-full sm:w-auto sm:opacity-100 sm:flex sm:items-center header-links`}>
-                    <Link href='/' onClick={() => setHamburgerOpen(false)} className={`${(firstPath === '' || firstPath === 'category') && 'header-nav-current'} ${hamburgerOpen && 'mb-2'} header-nav-item`}>Blog</Link>
+                    <Link href='/' onClick={() => setHamburgerOpen(false)} className={`${(firstPath === '' || firstPath === 'post') && 'header-nav-current'} ${hamburgerOpen && 'mb-2'} header-nav-item`}>Blog</Link>
                     <Link href='/learning' onClick={() => setHamburgerOpen(false)} className={`${firstPath === 'learning' && 'header-nav-current'} ${hamburgerOpen && 'mb-2'} header-nav-item`}>Learning</Link>
                     <Link href='/resources' onClick={() => setHamburgerOpen(false)} className={`${firstPath === 'resources' && 'header-nav-current'}  header-nav-item`}>Resources</Link>
                 </div>

@@ -76,7 +76,7 @@ const RichText = ({ rawText }) => {
                     />
                 );
             case 'code-block':
-                return <div key={index} className={`${className} px-4 pt-3 pb-5 mt-10 rounded-lg bg-[#1a2b34]`}><pre><code key={index} className='text-[13px]'>{modifiedText.map((item, i) => <React.Fragment key={i}>{item}</React.Fragment>)}</code></pre></div>;
+                return <div key={index} className={`${className} px-4 pt-3 pb-5 mt-10 rounded-lg bg-[#1a2b34]`}><pre><code key={index} className='text-[13px] overflow-scroll'>{modifiedText.map((item, i) => <React.Fragment key={i}>{item}</React.Fragment>)}</code></pre></div>;
             case 'block-quote':
                 const splitText = text[0].split(/\s*[\[\]]\s*/).filter(Boolean);
                 return (

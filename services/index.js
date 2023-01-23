@@ -18,8 +18,7 @@ export const getPosts = async () => {
                         imageBackground {
                             hex
                         }
-                        categories {
-                            name
+                        category {
                             slug
                         }
                     }
@@ -60,8 +59,7 @@ export const getPostDetails = async (slug) => {
                 imageBackground {
                     hex
                 }
-                categories {
-                    name
+                category {
                     slug
                 }
                 content {
@@ -119,8 +117,7 @@ export const getCategoryPost = async (slug) => {
               imageBackground {
                 hex
               }
-              categories {
-                name
+              category {
                 slug
               }
             }
