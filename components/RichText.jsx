@@ -12,7 +12,11 @@ const RichText = ({ rawText }) => {
 
     const getContentFragment = (index, text, obj, type, className) => {
         if (className === 'image-carousel') {
-            images.push(obj)
+            if (type === 'image') {
+                images.push({ img: obj, text: '' })
+            } else {
+                images[images.length - 1].text = obj
+            }
             return
         }
 
@@ -23,24 +27,12 @@ const RichText = ({ rawText }) => {
         // Save all text
         let modifiedText = text;
 
-        // Modify text if it is bold, italic, underlined, or a code snippet
+        // Modify text if it is bold, italic, underlined, link, or a code snippet
         if (obj) {
-            if (obj.bold) {
-                modifiedText = (<b key={index}>{text}</b>);
-            }
-
-            if (obj.italic) {
-                modifiedText = (<em key={index}>{text}</em>);
-            }
-
-            if (obj.underline) {
-                modifiedText = (<u key={index}>{text}</u>);
-            }
-
-            if (obj.code) {
-                modifiedText = (<span key={index} className='bg-[#ededeb] rounded inline-block p-1 mx-1 leading-3 font-mono text-[12px] text-red-500'>{text}</span>)
-            }
-
+            if (obj.bold) modifiedText = (<b key={index}>{text}</b>);
+            if (obj.italic) modifiedText = (<em key={index}>{text}</em>);
+            if (obj.underline) modifiedText = (<u key={index}>{text}</u>);
+            if (obj.code) modifiedText = (<span key={index} className='bg-[#ededeb] rounded inline-block p-1 mx-1 leading-3 font-mono text-[12px] text-red-500'>{text}</span>)
             if (obj.type === 'link') {
                 modifiedText = (
                     <a
@@ -61,7 +53,7 @@ const RichText = ({ rawText }) => {
             case 'heading-three':
                 return <h3 key={index} className={`${className} text-2xl font-medium mb-6 pt-10`}>{modifiedText.map((item, i) => <React.Fragment key={i}>{item}</React.Fragment>)}</h3>;
             case 'paragraph':
-                return <p key={index} className={`${className} text-[17px] mb-6 leading-[1.64rem]`}>{modifiedText.map((item, i) => <React.Fragment key={i}>{item}</React.Fragment>)}</p>;
+                return <p key={index} className={`${className} text-[15px] sm:text-[17px] mb-6 sm:leading-[1.6rem]`}>{modifiedText.map((item, i) => <React.Fragment key={i}>{item}</React.Fragment>)}</p>;
             case 'heading-four':
                 return <h4 key={index} className={`${className} text-2xl font-medium pt-4 mb-4`}>{modifiedText.map((item, i) => <React.Fragment key={i}>{item}</React.Fragment>)}</h4>;
             case 'image':
@@ -95,9 +87,23 @@ const RichText = ({ rawText }) => {
     };
 
     const createImageCarousel = (images) => {
-        return (<div className="h-[420px] md:h-[480px] flex items-top mb-10">
-            <Carousel>
-                {images.filter(img => img.type === 'image').map(img => <img src={img.src} alt="..." />)}
+        return (<div className="h-[90%] max-[450px]:mt-[-30px] max-[450px]:mb-[-30px] mb-10 overflow-visible">
+            <Carousel slide={false} indicators={false} className='overflow-visible' id='carousel'>
+                {images.map(image => {
+                    // return (<div className='absolute'>
+                    //     <img src={image.img.src} className="w-full block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2" alt="..." />
+                    //     <p className='relative top-[10.5rem] px-4 py-2 opacity-100 text-sm'>{image.text.children.map((child, index) => getContentFragment(index, child.text, child))}</p>
+                    // </div>)
+                    return (
+                        <div className='relative bg-transparent h-full py-4 flex justify-center items-center flex-col overflow-visible'>
+                            <div>
+                                <img src={image.img.src} className=" max-h-full max-w-full" alt="..." />
+                                <p className='text-xs mt-2'>{image.text.children.map((child, index) => getContentFragment(index, child.text, child))}</p>
+                            </div>
+
+                        </div>
+                    )
+                })}
             </Carousel>
         </div>)
     }
