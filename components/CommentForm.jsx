@@ -1,5 +1,4 @@
 import React, { useRef, useState, useEffect } from 'react'
-
 import { submitComment, getComments } from '../services';
 
 const CommentForm = ({ slug }) => {
@@ -44,6 +43,7 @@ const CommentForm = ({ slug }) => {
     submitComment(commentObj)
       .then(res => {
         setShowSuccessMessage(true);
+        commentEl.current.value = '';
         setTimeout(() => {
           setShowSuccessMessage(false);
         }, 3000);
@@ -56,7 +56,7 @@ const CommentForm = ({ slug }) => {
       <div className='grid grid-cols-1 gap-4 mb-4'>
         <textarea
           ref={commentEl}
-          className='p-4 border-none outline-none w-full rounded-lg focus:ring-2 focus:ring-gray-200 bg-gray-100 text-gray-700'
+          className={`p-4 ${error ? 'border-red-500 border-2 border-opacity-30' : 'border-none'} outline-none w-full rounded-lg focus:ring-2 focus:ring-gray-200 bg-gray-100 text-gray-700`}
           placeholder='What are your thoughts?'
           name='comment'
         />
@@ -64,13 +64,13 @@ const CommentForm = ({ slug }) => {
       <div className='grid grid-cols-1 gap-4 mb-4 lg:grid-cols-2'>
         <input
           type='text' ref={nameEl}
-          className='border-none py-2 px-4 outline-none w-full rounded-lg focus:ring-2 focus:ring-gray-200 bg-gray-100 text-gray-700'
+          className={`${error ? 'border-red-500 border-2 border-opacity-30' : 'border-none'} py-2 px-4 outline-none w-full rounded-lg focus:ring-2 focus:ring-gray-200 bg-gray-100 text-gray-700`}
           placeholder='Name'
           name='name'
         />
         <input
           type='text' ref={emailEl}
-          className='border-none py-2 px-4 outline-none w-full rounded-lg focus:ring-2 focus:ring-gray-200 bg-gray-100 text-gray-700'
+          className={`${error ? 'border-red-500 border-2 border-opacity-30' : 'border-none'} py-2 px-4 outline-none w-full rounded-lg focus:ring-2 focus:ring-gray-200 bg-gray-100 text-gray-700`}
           placeholder='Email'
           name='email'
         />
@@ -88,22 +88,25 @@ const CommentForm = ({ slug }) => {
             className='text-gray-500 cursor-pointer ml-2 text-sm tracking-normal'
             htmlFor='storeData'
           >
-            Save my email and name for the next time I comment.
+            Save email and name for the next time.
           </label>
         </div>
       </div>
-      <div className='mt-8'>
+      <div className='mt-4 flex items-center justify-between flex-wrap'>
         <button
           type='button'
           onClick={handleCommentSubmission}
-          className='bg-gray-800 rounded-lg px-4 py-2 cursor-pointer text-white font-semibold text-sm tracking-wide'
+          className='mt-4 bg-gray-800 rounded-lg px-4 py-2 cursor-pointer text-white font-semibold text-sm tracking-wide'
         >
           Submit
         </button>
-        {showSuccessMessage || error &&
-          <span className={`float-right mt-2 text-green-300`}>
-            {error ? 'All fields are required' : 'Comment submitted for review'}
-          </span>
+        {(showSuccessMessage || error) &&
+          <div className={`mt-4 flex items-center rounded-md px-2 py-1 ${showSuccessMessage ? 'bg-green-100' : 'bg-red-100'}`}>
+            <span className={`text-sm ${showSuccessMessage ? 'text-green-700 success-message' : 'text-red-700 error-message'}`}>
+              {error ? 'All fields are required' : 'Comment submitted for review'}
+            </span>
+          </div>
+
         }
       </div>
     </div>

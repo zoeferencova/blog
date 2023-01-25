@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Head from 'next/head'
-import { BlogNav, PostCard } from '../components';
+import { BlogNav, PostCard, ErrorMessage } from '../components';
 import { getPosts, getCategories } from '../services'
 
 export default function Home({ posts }) {
@@ -14,6 +14,18 @@ export default function Home({ posts }) {
 
   const updateCurrentTab = tabName => setCurrentTab(tabName);
 
+  const displayPosts = posts => {
+    const filteredPosts = posts.filter(post => post.node.category.slug === currentTab || currentTab === 'home')
+    if (filteredPosts.length) {
+      return (
+        <div className='grid grid-cols-1 lg:grid-cols-2 gap-x-36 gap-y-14 lg:gap-y-15 transition animate-fade'>
+          {filteredPosts.map((post, index) => (<PostCard post={post.node} key={index} />))}
+        </div>)
+    } else {
+      return <ErrorMessage messageTitle='This category is empty' messageSubtitle='Check back soon for more posts.' />
+    }
+  }
+
   return (
     <div className='mb-10 px-10 sm:px-20'>
       <Head>
@@ -23,11 +35,7 @@ export default function Home({ posts }) {
       {categories.length ?
         <>
           <BlogNav categories={categories} currentTab={currentTab} updateCurrentTab={updateCurrentTab} />
-          <div className='grid grid-cols-1 lg:grid-cols-2 gap-x-36 gap-y-14 lg:gap-y-15 transition animate-fade'>
-            {posts
-              .filter(post => post.node.category.slug === currentTab || currentTab === 'home')
-              .map((post, index) => (<PostCard post={post.node} key={index} />))}
-          </div>
+          {displayPosts(posts)}
         </>
         : ''}
     </div>

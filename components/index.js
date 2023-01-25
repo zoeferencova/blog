@@ -8,3 +8,4 @@ export { default as Comment } from "./Comment";
 export { default as CommentForm } from "./CommentForm";
 export { default as LinkList } from "./LinkList";
 export { default as RichText } from "./RichText";
+export { default as ErrorMessage } from "./ErrorMessage";

@@ -133,6 +133,43 @@ a {
     margin-right: 10px;
 }
 
+.error-message::before {
+    background-image: url('../images/warning.png');
+    background-repeat: no-repeat;
+}
+
+.success-message::before {
+    background-image: url('../images/success.png');
+    background-repeat: no-repeat;
+}
+
+.error-message::before,
+.success-message::before {
+    background-size: 13px;
+    display: inline-block;
+    width: 13px;
+    height: 13px;
+    margin-bottom: -1px;
+    margin-right: 7px;
+    content: "";
+}
+
+.big-error-message::before {
+    background-image: url('../images/error.png');
+    background-repeat: no-repeat;
+}
+
+.big-error-message::before {
+    background-size: 90px;
+    display: block;
+    margin: 0 auto;
+    width: 90px;
+    height: 90px;
+    content: "";
+    opacity: 0.8;
+    margin-bottom: 30px;
+}
+
 
 // CUSTOMIZING IMAGE CAROUSEL BUTTONS
 #carousel span {
