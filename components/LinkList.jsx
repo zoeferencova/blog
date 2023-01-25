@@ -1,7 +1,7 @@
 import React from 'react'
 
 const LinkList = ({ categoryTitle, icon, links, page }) => {
-    const linkStyles = 'text-sm text-gray-800 pb-[1px] border-solid border-1 border-b border-gray-500'
+    const linkStyles = 'text-rtsm text-gray-800 pb-[1px] border-solid border-1 border-b border-gray-500'
     return (
         <div className='mb-16'>
             <span className='flex'>

@@ -32,7 +32,7 @@ const RichText = ({ rawText }) => {
             if (obj.bold) modifiedText = (<b key={index}>{text}</b>);
             if (obj.italic) modifiedText = (<em key={index}>{text}</em>);
             if (obj.underline) modifiedText = (<u key={index}>{text}</u>);
-            if (obj.code) modifiedText = (<span key={index} className='bg-[#ededeb] rounded inline-block p-1 mx-1 leading-3 font-mono text-[12px] text-red-500'>{text}</span>)
+            if (obj.code) modifiedText = (<span key={index} className='bg-[#ededeb] rounded inline-block px-1 mx-1 font-mono text-xs text-red-500'>{text}</span>)
             if (obj.type === 'link') {
                 modifiedText = (
                     <a
@@ -51,9 +51,9 @@ const RichText = ({ rawText }) => {
         // Convert object to JSX by type
         switch (type) {
             case 'heading-three':
-                return <h3 key={index} className={`${className} text-2xl font-medium mb-6 pt-10`}>{modifiedText.map((item, i) => <React.Fragment key={i}>{item}</React.Fragment>)}</h3>;
+                return <h3 key={index} className={`${className} text-2xl font-medium mb-4 pt-6`}>{modifiedText.map((item, i) => <React.Fragment key={i}>{item}</React.Fragment>)}</h3>;
             case 'paragraph':
-                return <p key={index} className={`${className} text-[15px] sm:text-[17px] mb-6 sm:leading-[1.6rem]`}>{modifiedText.map((item, i) => <React.Fragment key={i}>{item}</React.Fragment>)}</p>;
+                return <p key={index} className={`${className} text-rtsm sm:text-rtbase mb-6 sm:leading-rt`}>{modifiedText.map((item, i) => <React.Fragment key={i}>{item}</React.Fragment>)}</p>;
             case 'heading-four':
                 return <h4 key={index} className={`${className} text-2xl font-medium pt-4 mb-4`}>{modifiedText.map((item, i) => <React.Fragment key={i}>{item}</React.Fragment>)}</h4>;
             case 'image':
@@ -68,7 +68,7 @@ const RichText = ({ rawText }) => {
                     />
                 );
             case 'code-block':
-                return <div key={index} className={`${className} px-4 pt-3 pb-5 mt-10 rounded-lg bg-[#1a2b34]`}><pre><code key={index} className='text-[13px] overflow-scroll'>{modifiedText.map((item, i) => <React.Fragment key={i}>{item}</React.Fragment>)}</code></pre></div>;
+                return <div key={index} className={`${className} px-4 pt-3 pb-5 mt-10 rounded-lg bg-[#1a2b34]`}><pre><code key={index} className='text-codeblock overflow-x-auto'>{modifiedText.map((item, i) => <React.Fragment key={i}>{item}</React.Fragment>)}</code></pre></div>;
             case 'block-quote':
                 const splitText = text[0].split(/\s*[\[\]]\s*/).filter(Boolean);
                 return (
@@ -87,8 +87,8 @@ const RichText = ({ rawText }) => {
     };
 
     const createImageCarousel = (images) => {
-        return (<div className="h-[90%] max-[450px]:mt-[-30px] max-[450px]:mb-[-30px] mb-10 overflow-visible">
-            <Carousel slide={false} indicators={false} className='overflow-visible' id='carousel'>
+        return (<div className="h-[90%] max-[450px]:mt-[-30px] max-[450px]:mb-[-30px] mb-10">
+            <Carousel slide={false} indicators={false} id='carousel'>
                 {images.map(image => {
                     // return (<div className='absolute'>
                     //     <img src={image.img.src} className="w-full block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2" alt="..." />

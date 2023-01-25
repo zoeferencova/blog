@@ -25,8 +25,8 @@ const Comment = ({ slug }) => {
                             <p className='mb-4 flex flex-row items-center'>
                                 <Image src={avatar} className='w-9 h-9' />
                                 <div className='ml-3'>
-                                    <span className='text-[14px] block'>{comment.name}</span>
-                                    <span className='text-[14px] text-gray-500'>{moment(comment.createdAt).format('MMM DD, YYYY')}</span>
+                                    <span className='text-rtsm block'>{comment.name}</span>
+                                    <span className='text-rtsm text-gray-500'>{moment(comment.createdAt).format('MMM DD, YYYY')}</span>
                                 </div>
                             </p>
                             <p className='whitespace-pre-line w-full'>
