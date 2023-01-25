@@ -1,5 +1,6 @@
 import React from 'react'
 import { useRouter } from 'next/router'
+import { Footer } from './'
 import { Header, PageTitle } from './'
 
 const Layout = ({ children }) => {
@@ -10,13 +11,14 @@ const Layout = ({ children }) => {
     const firstPath = pathname.split('/')[1];
 
     return (
-        <>
+        <div className='min-h-screen relative pb-[40px]'>
             <Header firstPath={firstPath} />
             <PageTitle slug={slug} firstPath={firstPath} />
-            <div className='transition animate-fade'>
+            <div className='transition animate-fade pb-16'>
                 {children}
             </div>
-        </>
+            <Footer />
+        </div>
     )
 }
 
