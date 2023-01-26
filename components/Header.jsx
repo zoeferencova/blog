@@ -11,7 +11,7 @@ const Header = ({ firstPath }) => {
         <div className="px-10 py-8 sm:px-20 ">
             <div className="w-full pt-3 sm:pt-8 pb-2 sm:pb-8 flex flex-wrap justify-between items-center">
                 <Link href='/'>
-                    <Image src={logo} alt='tada blog' width='95' className='w-[90px] sm:w-24' />
+                    <Image src={logo} alt='tada blog' width='95' height='auto' className='w-[90px] sm:w-24' />
                 </Link>
                 <button
                     className="flex flex-col h-6 w-6 group cursor-pointer sm:hidden"

@@ -87,7 +87,7 @@ const RichText = ({ rawText }) => {
     };
 
     const createImageCarousel = (images) => {
-        return (<div className="h-[90%] max-[450px]:mt-[-30px] max-[450px]:mb-[-30px] mb-10">
+        return (<div key='carousel' className="h-[90%] max-[450px]:mt-[-30px] max-[450px]:mb-[-30px] mb-10">
             <Carousel slide={false} indicators={false} id='carousel'>
                 {images.map((image, i) => {
                     return (
