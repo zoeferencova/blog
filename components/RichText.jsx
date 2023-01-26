@@ -72,7 +72,7 @@ const RichText = ({ rawText }) => {
             case 'block-quote':
                 const splitText = text[0].split(/\s*[\[\]]\s*/).filter(Boolean);
                 return (
-                    <Card href="#" className='mb-5 hover:bg-white hover:cursor-auto'>
+                    <Card key={index} className='mb-5 hover:bg-white hover:cursor-auto'>
                         <h5 className="text-xl font-serif text-gray-900 dark:text-white">
                             {splitText[0]}
                         </h5>
@@ -89,13 +89,9 @@ const RichText = ({ rawText }) => {
     const createImageCarousel = (images) => {
         return (<div className="h-[90%] max-[450px]:mt-[-30px] max-[450px]:mb-[-30px] mb-10">
             <Carousel slide={false} indicators={false} id='carousel'>
-                {images.map(image => {
-                    // return (<div className='absolute'>
-                    //     <img src={image.img.src} className="w-full block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2" alt="..." />
-                    //     <p className='relative top-[10.5rem] px-4 py-2 opacity-100 text-sm'>{image.text.children.map((child, index) => getContentFragment(index, child.text, child))}</p>
-                    // </div>)
+                {images.map((image, i) => {
                     return (
-                        <div className='relative bg-transparent h-full py-4 flex justify-center items-center flex-col overflow-visible'>
+                        <div key={i} className='relative bg-transparent h-full py-4 flex justify-center items-center flex-col overflow-visible'>
                             <div>
                                 <img src={image.img.src} className=" max-h-full max-w-full" alt="..." />
                                 <p className='text-xs mt-2'>{image.text.children.map((child, index) => getContentFragment(index, child.text, child))}</p>

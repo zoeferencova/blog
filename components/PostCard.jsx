@@ -2,7 +2,6 @@ import React from 'react'
 import Link from 'next/link'
 
 const PostCard = ({ post }) => {
-    console.log(post)
     return (
         <Link href={`/post/${post.slug}`}>
             <div className='flex flex-col cursor-pointer sm:mt-0 sm:flex-row lg:items-center transition animate-fade'>

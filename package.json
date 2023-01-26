@@ -6,6 +6,9 @@
     "start": "next start"
   },
   "dependencies": {
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
+    "@mui/material": "^5.11.6",
     "@tailwindcss/line-clamp": "^0.4.2",
     "flowbite": "^1.6.2",
     "flowbite-react": "^0.3.7",
@@ -15,12 +18,16 @@
     "html-react-parser": "^3.0.4",
     "moment": "^2.29.4",
     "next": "latest",
+    "nextjs-progressbar": "^0.0.16",
+    "nprogress": "^0.2.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-spinners": "^0.13.8",
     "sass": "^1.57.1"
   },
   "devDependencies": {
     "@types/node": "18.11.3",
+    "@types/nprogress": "^0.2.0",
     "@types/react": "18.0.21",
     "@types/react-dom": "18.0.6",
     "autoprefixer": "^10.4.13",

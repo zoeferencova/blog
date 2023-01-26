@@ -41,6 +41,9 @@ a {
     box-sizing: border-box;
 }
 
+body>* {
+    box-shadow: none !important;
+}
 
 .blog-nav-item {
     cursor: pointer;
