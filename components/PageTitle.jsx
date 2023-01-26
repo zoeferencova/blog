@@ -1,20 +1,27 @@
-import React from 'react'
+import React from 'react';
+import PropTypes from 'prop-types';
 
-const PageTitle = ({ firstPath, slug }) => {
-
-    const renderPageTitle = (path, slug) => {
+function PageTitle({ firstPath, slug }) {
+    const renderPageTitle = (path, pathSlug) => {
+        let title = '';
         switch (path) {
             case '':
             case 'category':
-                return 'Blog'
+                title = 'Blog';
+                break;
             case 'resources':
-                return 'Resources'
+                title = 'Resources';
+                break;
             case 'learning':
-                if (!slug) {
-                    return 'Learning'
+                if (!pathSlug) {
+                    title = 'Learning';
                 }
+                break;
+            default:
+                title = '';
         }
-    }
+        return title;
+    };
 
     return (
         <div className='px-10 sm:px-20'>
@@ -25,5 +32,14 @@ const PageTitle = ({ firstPath, slug }) => {
     );
 }
 
-export default PageTitle
+export default PageTitle;
 
+PageTitle.defaultProps = {
+    firstPath: '',
+    slug: '',
+};
+
+PageTitle.propTypes = {
+    firstPath: PropTypes.string,
+    slug: PropTypes.string,
+};

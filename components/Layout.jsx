@@ -1,13 +1,12 @@
-import React from 'react'
-import { useRouter } from 'next/router'
-import { Footer } from './'
-import { Header, PageTitle } from './'
+import React from 'react';
+import PropTypes from 'prop-types';
+import { useRouter } from 'next/router';
+import { Footer, Header, PageTitle } from '.';
 
-const Layout = ({ children }) => {
-
-    const router = useRouter()
-    const { pathname } = router
-    const { slug } = router.query
+function Layout({ children }) {
+    const router = useRouter();
+    const { pathname } = router;
+    const { slug } = router.query;
     const firstPath = pathname.split('/')[1];
 
     return (
@@ -19,7 +18,15 @@ const Layout = ({ children }) => {
             </div>
             <Footer />
         </div>
-    )
+    );
 }
 
-export default Layout
+export default Layout;
+
+Layout.defaultProps = {
+    children: [],
+};
+
+Layout.propTypes = {
+    children: PropTypes.arrayOf(PropTypes.objectOf(PropTypes.any)),
+};

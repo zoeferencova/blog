@@ -24,7 +24,7 @@
     "**/*.ts",
     "**/*.tsx",
     "pages/api/comments.js",
-    "pages/index.js",
+    "pages/index.jsx",
     "pages/_app.js"
   ],
   "exclude": [

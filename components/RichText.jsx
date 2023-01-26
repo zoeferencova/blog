@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import PropTypes from 'prop-types';
 import hljs from 'highlight.js';
 import { Carousel, Card } from 'flowbite-react';
 
@@ -116,3 +117,11 @@ function RichText({ rawText }) {
 }
 
 export default RichText;
+
+RichText.defaultProps = {
+    rawText: {},
+};
+
+RichText.propTypes = {
+    rawText: PropTypes.objectOf(PropTypes.oneOfType([PropTypes.object, PropTypes.string])),
+};

@@ -47,17 +47,17 @@ body>* {
 
 .blog-nav-item {
     cursor: pointer;
-    margin-right: 10px;
+    margin-right: 12px;
     border-radius: 50px;
-    padding: 8px 16px;
+    padding: 5px 15px;
     font-size: 0.95rem;
     font-weight: 500;
-    background-color: #F2F2F2;
+    background-color: #F2F2F2 !important;
     color: black;
 }
 
 .blog-nav-current {
-    background-color: #282c34;
+    background-color: #282c34 !important;
     color: white;
 }
 
