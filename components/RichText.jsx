@@ -35,7 +35,7 @@ function RichText({ rawText }) {
             if (obj.code) formattedItem = (<span key={index} className='bg-[#ededeb] rounded inline-block px-2 mx-1 font-mono text-sm text-red-500'>{text}</span>);
             if (obj.type === 'link') {
                 formattedItem = (
-                    <a key={index} href={obj.href} target={obj.openInNewTab ? '_blank' : '_self'} className={`${className} border-b border-[#759dbd]/50 text-[#759dbd]`} rel='noreferrer'>
+                    <a key={index} href={obj.href} target='_blank' className={`${className} border-b border-[#759dbd]/50 text-[#759dbd]`} rel='noreferrer'>
                         {obj.children.map((item) => item.text)}
                     </a>
                 );
