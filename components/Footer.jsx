@@ -7,7 +7,7 @@ import linkedin from '../images/linkedin.png';
 
 function Footer() {
     return (
-        <div className='absolute bottom-0 h-[70px] px-5 sm:px-10 flex items-center justify-between w-full border-t border-gray-100 -mx-10 sm:-mx-20'>
+        <div className='absolute bottom-0 h-[70px] px-5 sm:px-10 flex items-center justify-between w-full border-t border-gray-100 -mx-8 sm:-mx-20'>
             <p className='text-gray-500 text-sm'>Created by Zoe Ferencova</p>
             <div className='flex justify-between'>
                 <a className='mr-4 opacity-50 hover:opacity-100 hover:cursor-pointer transition ease-in duration-300' href='https://zoeferencova.github.io/portfolio' target='_blank' rel='noreferrer'><Image alt='author portfolio' src={info} height='20' width='auto' /></a>

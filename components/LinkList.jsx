@@ -5,9 +5,9 @@ import Link from 'next/link';
 function LinkList({
     categoryTitle, icon, links, page,
 }) {
-    const linkStyles = 'text-rtsm text-gray-00 pb-[1px] border-solid border-1 border-b border-gray-500';
+    const linkStyles = 'text-rtsm text-gray-800 pb-[1px] border-solid border-1 border-b border-gray-500';
     return (
-        <div className='mb-16'>
+        <div className='mb-12 sm:mb-16'>
             <span className='flex'>
                 <img alt={`${categoryTitle} icon`} src={icon.url} className='inline-block mr-3 h-6' />
                 <h2 className='font-medium mb-3'>{categoryTitle}</h2>

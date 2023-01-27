@@ -26,7 +26,7 @@ module.exports = {
       'subtitle': '1.4rem',
     },
     lineHeight: {
-      'rt': '1.6rem',
+      'rt': '1.67rem',
     },
     extend: {
       // that is animation class

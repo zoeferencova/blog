@@ -32,7 +32,7 @@ function RichText({ rawText }) {
             if (obj.bold) formattedItem = (<b key={index}>{text}</b>);
             if (obj.italic) formattedItem = (<em key={index}>{text}</em>);
             if (obj.underline) formattedItem = (<u key={index}>{text}</u>);
-            if (obj.code) formattedItem = (<span key={index} className='bg-[#ededeb] rounded inline-block px-1 mx-1 font-mono text-xs text-red-500'>{text}</span>);
+            if (obj.code) formattedItem = (<span key={index} className='bg-[#ededeb] rounded inline-block px-2 mx-1 font-mono text-sm text-red-500'>{text}</span>);
             if (obj.type === 'link') {
                 formattedItem = (
                     <a key={index} href={obj.href} target={obj.openInNewTab ? '_blank' : '_self'} className={`${className} border-b border-[#759dbd]/50 text-[#759dbd]`} rel='noreferrer'>
@@ -45,7 +45,7 @@ function RichText({ rawText }) {
         // Convert object to JSX by type
         if (type === 'heading-three') formattedItem = (<h3 key={index} className={`${className} text-2xl font-medium mb-4 pt-6`}>{formattedItem}</h3>);
         if (type === 'heading-four') formattedItem = (<h4 key={index} className={`${className} text-2xl font-medium pt-4 mb-4`}>{formattedItem}</h4>);
-        if (type === 'paragraph') formattedItem = (<p key={index} className={`${className} text-rtsm sm:text-rtbase mb-6 sm:leading-rt`}>{formattedItem}</p>);
+        if (type === 'paragraph') formattedItem = (<p key={index} className={`${className} text-base sm:text-rtbase mb-6 leading-rt`}>{formattedItem}</p>);
         if (type === 'image') formattedItem = (<img key={index} alt={obj.title} height={obj.height} width={obj.width} src={obj.src} className={`${className}`} />);
 
         if (type === 'code-block') {
@@ -81,7 +81,7 @@ function RichText({ rawText }) {
                 {imageObjects.map((image) => (
                     <div key={image.text} className='relative bg-transparent h-full py-4 flex justify-center items-center flex-col overflow-visible'>
                         <div>
-                            <img src={image.img.src} className=' max-h-full max-w-full' alt='...' />
+                            <img src={image.img.src} className=' max-h-full w-full' alt='...' />
                             <p className='text-xs mt-2'>{image.text.children.map((child, index) => getContentFragment(index, child.text, child))}</p>
                         </div>
 
