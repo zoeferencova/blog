@@ -107,7 +107,7 @@ function CommentForm({ slug }) {
         <button
           type='button'
           onClick={handleCommentSubmission}
-          className='mt-4 bg-gray-800 rounded-lg px-4 py-2 cursor-pointer text-white font-semibold text-sm tracking-wide'
+          className='mt-4 bg-gray-800 rounded-lg px-4 py-2 cursor-pointer text-white font-semibold text-base sm:text-rtsm tracking-wide'
         >
           Submit
         </button>
