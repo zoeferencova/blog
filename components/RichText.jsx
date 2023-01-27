@@ -62,7 +62,7 @@ function RichText({ rawText }) {
             const splitText = text[0].split(/\s*[\[\]]\s*/).filter(Boolean);
             formattedItem = (
                 <Card key={index} className='mb-5 hover:bg-white hover:cursor-auto'>
-                    <h5 className='text-xl font-serif text-gray-900 dark:text-white'>
+                    <h5 className='text-lg sm:text-xl font-serif text-gray-900 dark:text-white'>
                         {splitText[0]}
                     </h5>
                     <p className='font-normal text-sm text-gray-700 dark:text-gray-400'>

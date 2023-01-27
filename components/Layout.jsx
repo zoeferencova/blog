@@ -10,7 +10,7 @@ function Layout({ children }) {
     const firstPath = pathname.split('/')[1];
 
     return (
-        <div className='min-h-screen relative pb-[40px] px-8 sm:px-20'>
+        <div className='min-h-screen relative pb-[40px] px-7 sm:px-20'>
             <Header firstPath={firstPath} />
             <PageTitle slug={slug} firstPath={firstPath} />
             <div className='transition animate-fade pb-16'>

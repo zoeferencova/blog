@@ -23,7 +23,7 @@ function LinkList({
                     </Link>
                 ))
                 : links.map((link) => (
-                    <div key={link.raw.children[0].children[1].children[0].text} className='mb-1'>
+                    <div key={link.raw.children[0].children[1].children[0].text} className='mb-3'>
                         <Link
                             href={link.raw.children[0].children[1].href}
                             className={linkStyles}

@@ -10,7 +10,7 @@ function Header({ firstPath }) {
     const hamburgerLine = 'h-[3px] w-5 mb-1 rounded-full bg-black transition ease transform duration-300';
     return (
         <div className='py-8'>
-            <div className='w-full pt-3 sm:pt-8 pb-2 sm:pb-8 flex flex-wrap justify-between items-center'>
+            <div className='w-full pt-1 sm:pt-8 pb-3 sm:pb-8 flex flex-wrap justify-between items-center'>
                 <Link href='/'>
                     <Image src={logo} alt='tada blog' width='95' height='auto' className='w-[90px] sm:w-24' />
                 </Link>
