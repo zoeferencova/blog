@@ -5,7 +5,7 @@ import { LinkList } from '../../components';
 
 function LearningPage({ topicCategories }) {
   return (
-    <div className="mt-4 mb-10 px-10 sm:px-20 transition animate-fade">
+    <div className="mt-4 mb-10 transition animate-fade">
       {topicCategories.map((topicCat) => <LinkList key={topicCat.name} categoryTitle={topicCat.name} icon={topicCat.icon} links={topicCat.topics} page="learning" />)}
     </div>
   );

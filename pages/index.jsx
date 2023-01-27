@@ -28,7 +28,7 @@ export default function Home({ posts }) {
   };
 
   return (
-    <div className='mb-10 px-10 sm:px-20'>
+    <div className='mb-10'>
       <Head>
         <title>tada_</title>
         <link rel='icon' href='/favicon.ico' />

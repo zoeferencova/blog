@@ -5,7 +5,7 @@ import Link from 'next/link';
 function LinkList({
     categoryTitle, icon, links, page,
 }) {
-    const linkStyles = 'text-rtsm text-gray-800 pb-[1px] border-solid border-1 border-b border-gray-500';
+    const linkStyles = 'text-rtsm text-gray-00 pb-[1px] border-solid border-1 border-b border-gray-500';
     return (
         <div className='mb-16'>
             <span className='flex'>
@@ -31,7 +31,7 @@ function LinkList({
                         >
                             {link.raw.children[0].children[1].children[0].text}
                         </Link>
-                        <span className='text-sm text-gray-800'>
+                        <span className='text-rtsm text-gray-500'>
                             {link.raw.children[0].children[2].text}
                         </span>
                     </div>

@@ -4,7 +4,7 @@ import { PostDetails, Comment, CommentForm } from '../../components'
 
 const PostPage = ({ post }) => {
     return (
-        <div className='mb-10 mx-auto max-w-[54rem] pt-5 px-10 sm:px-20 transition animate-fade'>
+        <div className='mb-10 mx-auto max-w-[42rem] pt-5 transition animate-fade'>
             <PostDetails post={post} />
             <CommentForm slug={post.slug} />
             <Comment slug={post.slug} />

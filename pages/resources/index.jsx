@@ -4,7 +4,7 @@ import { LinkList } from '../../components'
 
 const ResourcePage = ({ resources }) => {
     return (
-        <div className="mt-16 mb-10 px-10 sm:px-20 transition animate-fade">
+        <div className="mt-16 mb-10 transition animate-fade">
             {resources.map((resource, i) => (
                 <LinkList
                     key={i}
