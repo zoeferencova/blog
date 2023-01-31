@@ -5,6 +5,10 @@ import { LinkList } from '../../components'
 const ResourcePage = ({ resources }) => {
     return (
         <div className="mt-12 sm:mt-16 mb-10 transition animate-fade">
+            <Head>
+                <title>Resources - Tada Blog: Exploring Web-based Data Visualization</title>
+                <link rel='icon' href='/../favicon.ico' />
+            </Head>
             {resources.map((resource, i) => (
                 <LinkList
                     key={i}

@@ -5,6 +5,10 @@ import { getLearningTopics, getTopicDetails } from '../../services'
 const LearningPage = ({ topic }) => {
     return (
         <div key={topic.slug} className='mb-8 mx-auto max-w-[42rem] pt-5 transition animate-fade'>
+            <Head>
+                <title>{topic.name}</title>
+                <link rel='icon' href='/../favicon.ico' />
+            </Head>
             <h1 className='pb-8 sm:pb-10 font-medium text-3xl sm:text-4xl'>{topic.name}</h1>
             <RichText rawText={topic} />
         </div>

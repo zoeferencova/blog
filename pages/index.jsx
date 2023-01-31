@@ -30,7 +30,7 @@ export default function Home({ posts }) {
   return (
     <div className='mb-10'>
       <Head>
-        <title>tada_</title>
+        <title>Tada Blog: Exploring Web-based Data Visualization</title>
         <link rel='icon' href='/favicon.ico' />
       </Head>
       {categories.length
