@@ -1,6 +1,7 @@
-import React from 'react'
-import { RichText } from '../../components'
-import { getLearningTopics, getTopicDetails } from '../../services'
+import React from 'react';
+import Head from 'next/head';
+import { RichText } from '../../components';
+import { getLearningTopics, getTopicDetails } from '../../services';
 
 const LearningPage = ({ topic }) => {
     return (
@@ -18,8 +19,8 @@ const LearningPage = ({ topic }) => {
 export default LearningPage
 
 export async function getStaticPaths() {
-    const topicCategories = await getLearningTopics()
-    const paths = topicCategories.map(cat => cat.topics.map(({ slug }) => ({ params: { slug } }))[0])
+    const topicCategories = await getLearningTopics();
+    const paths = topicCategories.map(cat => cat.topics.map(({ slug }) => ({ params: { slug } }))[0]);
     return {
         paths,
         fallback: false

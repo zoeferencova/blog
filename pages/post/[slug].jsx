@@ -1,6 +1,7 @@
-import React from 'react'
-import { getPosts, getPostDetails } from '../../services'
-import { PostDetails, Comment, CommentForm } from '../../components'
+import React from 'react';
+import Head from 'next/head';
+import { getPosts, getPostDetails } from '../../services';
+import { PostDetails, Comment, CommentForm } from '../../components';
 
 const PostPage = ({ post }) => {
     return (
@@ -16,7 +17,7 @@ const PostPage = ({ post }) => {
     )
 }
 
-export default PostPage
+export default PostPage;
 
 export async function getStaticProps({ params }) {
     const data = (await getPostDetails(params.slug)) || [];
