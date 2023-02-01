@@ -6,12 +6,12 @@ import { LinkList } from '../../components';
 
 function LearningPage({ topicCategories }) {
   return (
-    <div className="mt-4 mb-10 transition animate-fade">
+    <div className='mt-4 mb-10 transition animate-fade'>
       <Head>
         <title>Learning - Tada Blog: Exploring Web-based Data Visualization</title>
         <link rel='icon' href='/../favicon.ico' />
       </Head>
-      {topicCategories.map((topicCat) => <LinkList key={topicCat.name} categoryTitle={topicCat.name} icon={topicCat.icon} links={topicCat.topics} page="learning" />)}
+      {topicCategories.map((topicCat) => <LinkList key={topicCat.name} categoryTitle={topicCat.name} icon={topicCat.icon} links={topicCat.topics} page='learning' />)}
     </div>
   );
 }

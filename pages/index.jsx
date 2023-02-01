@@ -8,6 +8,8 @@ export default function Home({ posts }) {
   const [categories, setCategories] = useState([]);
   const [currentTab, setCurrentTab] = useState('home');
 
+  console.log(posts)
+
   useEffect(() => {
     getCategories()
       .then((newCategories) => { setCategories(newCategories); });
@@ -16,6 +18,7 @@ export default function Home({ posts }) {
   const updateCurrentTab = (tabName) => setCurrentTab(tabName);
 
   const displayPosts = (allPosts) => {
+    console.log(allPosts)
     const filteredPosts = allPosts.filter((post) => post.node.category.slug === currentTab || currentTab === 'home');
     if (filteredPosts.length) {
       return (
