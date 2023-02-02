@@ -5,7 +5,7 @@ import { PostDetails, Comment, CommentForm } from '../../components';
 
 const PostPage = ({ post }) => {
     return (
-        <div className='mb-10 mx-auto max-w-[42rem] pt-5 transition animate-fade'>
+        <div className='mb-10 mx-auto max-w-[44rem] pt-5 transition animate-fade'>
             <Head>
                 <title>{post.title}</title>
                 <link rel='icon' href='/../favicon.ico' />

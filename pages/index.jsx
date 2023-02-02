@@ -18,7 +18,6 @@ export default function Home({ posts }) {
   const updateCurrentTab = (tabName) => setCurrentTab(tabName);
 
   const displayPosts = (allPosts) => {
-    console.log(allPosts)
     const filteredPosts = allPosts.filter((post) => post.node.category.slug === currentTab || currentTab === 'home');
     if (filteredPosts.length) {
       return (

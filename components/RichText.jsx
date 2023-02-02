@@ -43,9 +43,9 @@ function RichText({ rawText }) {
         }
 
         // Convert object to JSX by type
-        if (type === 'heading-three') formattedItem = (<h3 key={index} className={`${className} text-2xl font-medium mb-4 pt-6`}>{formattedItem}</h3>);
-        if (type === 'heading-four') formattedItem = (<h4 key={index} className={`${className} text-xl font-medium pt-4 mb-4`}>{formattedItem}</h4>);
-        if (type === 'paragraph') formattedItem = (<p key={index} className={`${className} text-base sm:text-rtbase mb-6 leading-rt`}>{formattedItem}</p>);
+        if (type === 'heading-three') formattedItem = (<h3 key={index} className={`${className} text-[1.7rem] font-medium mb-7 pt-6`}>{formattedItem}</h3>);
+        if (type === 'heading-four') formattedItem = (<h4 key={index} className={`${className} text-posth4 font-medium pt-3 mb-4`}>{formattedItem}</h4>);
+        if (type === 'paragraph') formattedItem = (<p key={index} className={`${className} text-base sm:text-rtbase mb-5 sm:mb-6 leading-rt`}>{formattedItem}</p>);
         if (type === 'image') formattedItem = (<img key={index} alt={obj.title} height={obj.height} width={obj.width} src={obj.src} className={`${className}`} />);
 
         if (type === 'code-block') {
@@ -76,7 +76,7 @@ function RichText({ rawText }) {
     };
 
     const createImageCarousel = (imageObjects) => (
-        <div key='carousel' className='h-[90%] max-[450px]:mt-[-30px] max-[450px]:mb-[-30px] mb-10'>
+        <div key='carousel' className='h-[90%] max-[450px]:mt-[-20px] max-[450px]:mb-0 mb-10 pt-4'>
             <Carousel slide={false} indicators={false} id='carousel'>
                 {imageObjects.map((image) => (
                     <div key={image.text} className='relative bg-transparent h-full py-4 flex justify-center items-center flex-col overflow-visible'>

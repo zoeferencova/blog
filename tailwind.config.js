@@ -25,6 +25,8 @@ module.exports = {
       'codeblock': '0.85rem',
       'pgtitle': '2.5rem',
       'subtitle': '1.4rem',
+      'posth4': '1.28rem',
+      'blogtitle': '1.8rem'
     },
     lineHeight: {
       'rt': '1.67rem',
