@@ -8,8 +8,6 @@ export default function Home({ posts }) {
   const [categories, setCategories] = useState([]);
   const [currentTab, setCurrentTab] = useState('home');
 
-  console.log(posts)
-
   useEffect(() => {
     getCategories()
       .then((newCategories) => { setCategories(newCategories); });

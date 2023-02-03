@@ -72,6 +72,16 @@ function RichText({ rawText }) {
             );
         }
 
+        if (type === 'bulleted-list') {
+            formattedItem = (
+                <ul key={index} className='list-disc ml-6 sm:ml-10 pb-3 sm:pb-5 sm:pt-2'>
+                    {obj.children[0].children.map((bulletPoint, index) => (
+                        <li key={index} className='text-base sm:text-rtbase pl-3 mb-4 sm:mb-5'>{bulletPoint.children[0].children.map((item, index) => getContentFragment(index, item.text, item))}</li>
+                    ))}
+                </ul>
+            );
+        }
+
         return formattedItem;
     };
 
