@@ -44,13 +44,13 @@ function RichText({ rawText }) {
 
         // Convert object to JSX by type
         if (type === 'heading-three') formattedItem = (<h3 key={index} className={`${className} text-[1.7rem] font-medium mb-5 sm:mb-7 pt-6`}>{formattedItem}</h3>);
-        if (type === 'heading-four') formattedItem = (<h4 key={index} className={`${className} text-posth4 font-medium pt-3 mb-4`}>{formattedItem}</h4>);
+        if (type === 'heading-four') formattedItem = (<h4 key={index} className={`${className} text-posth4 font-medium pt-6 mb-6`}>{formattedItem}</h4>);
         if (type === 'paragraph') formattedItem = (<p key={index} className={`${className} text-base sm:text-rtbase mb-5 sm:mb-6 leading-rt`}>{formattedItem}</p>);
-        if (type === 'image') formattedItem = (<img key={index} alt={obj.title} height={obj.height} width={obj.width} src={obj.src} className={`${className} mt-5 mb-6 sm:my-9`} />);
+        if (type === 'image') formattedItem = (<img key={index} alt={obj.title} height={obj.height} width={obj.width} src={obj.src} className={`${className} mt-5 mb-6 sm:my-10`} />);
 
         if (type === 'code-block') {
             formattedItem = (
-                <div key={index} className={`${className} px-4 pt-3 pb-5 mt-10 rounded-lg bg-[#1a2b34]`}>
+                <div key={index} className={`${className} px-5 pt-3 pb-5 mt-10 rounded-lg bg-[#1a2b34]`}>
                     <pre>
                         <code key={index} className='text-codeblock overflow-x-auto'>{formattedItem.map((item) => <React.Fragment key={item}>{item}</React.Fragment>)}</code>
                     </pre>
@@ -75,8 +75,8 @@ function RichText({ rawText }) {
         if (type === 'bulleted-list') {
             formattedItem = (
                 <ul key={index} className='list-disc ml-6 sm:ml-10 pb-3 sm:pb-5 sm:pt-2'>
-                    {obj.children[0].children.map((bulletPoint, index) => (
-                        <li key={index} className='text-base sm:text-rtbase pl-3 mb-4 sm:mb-5'>{bulletPoint.children[0].children.map((item, index) => getContentFragment(index, item.text, item))}</li>
+                    {obj.children.map((bulletPoint, index) => (
+                        <li key={index} className='text-base sm:text-rtbase pl-3 mb-3 sm:mb-4'>{bulletPoint.children[0].children.map((item, index) => getContentFragment(index, item.text, item))}</li>
                     ))}
                 </ul>
             );

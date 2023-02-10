@@ -19,7 +19,7 @@ export default function Home({ posts }) {
     const filteredPosts = allPosts.filter((post) => post.node.category.slug === currentTab || currentTab === 'home');
     if (filteredPosts.length) {
       return (
-        <div className='grid grid-cols-1 lg:grid-cols-2 gap-x-36 gap-y-14 lg:gap-y-15 transition animate-fade'>
+        <div className='grid grid-cols-1 lg:grid-cols-2 gap-x-24 gap-y-14 lg:gap-y-15 transition animate-fade'>
           {filteredPosts.map((post) => (<PostCard post={post.node} key={post.node.slug} />))}
         </div>
       );

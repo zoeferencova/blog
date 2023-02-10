@@ -6,7 +6,7 @@ function PostCard({ post }) {
     return (
         <Link href={`/post/${post.slug}`}>
             <div className='flex flex-col cursor-pointer sm:mt-0 sm:flex-row lg:items-center transition animate-fade'>
-                <div style={{ backgroundColor: `${post.imageBackground.hex}` }} className='flex justify-center items-center rounded-xl h-56 sm:w-[220px] sm:h-[220px] min-[1800px]:w-[40%] p-8'>
+                <div style={{ backgroundColor: `${post.imageBackground.hex}` }} className='flex justify-center items-center rounded-xl h-56 sm:w-[225px] sm:h-[225px] min-[1800px]:w-[40%] p-8'>
                     <img
                         src={post.featuredImage.url}
                         alt={post.title}
