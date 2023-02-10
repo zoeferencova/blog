@@ -52,7 +52,7 @@
 .hljs-header,
 .ruby .hljs-symbol,
 .xml .hljs-cdata {
-    color: rgb(140, 220, 140);
+    color: rgb(143, 202, 159);
 }
 
 /* Oceanic Next Aqua */
@@ -70,7 +70,7 @@
 .javascript .hljs-title,
 .coffeescript .hljs-title,
 .hljs-title {
-    color: #71b0e0;
+    color: #7bb5e1;
 }
 
 /* Oceanic Next Purple */
@@ -94,4 +94,24 @@
 .xml .css,
 .xml .hljs-cdata {
     opacity: 0.5;
+}
+
+.hljs {
+    overflow: auto;
+}
+
+.hljs::-webkit-scrollbar {
+    width: 10px;
+    height: 6px;
+    padding-top: 10px;
+}
+
+.hljs::-webkit-scrollbar-thumb {
+    background: rgb(175, 175, 175, 0.4);
+    border-radius: 10px;
+}
+
+.hljs::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
 }

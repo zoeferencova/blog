@@ -50,9 +50,9 @@ function RichText({ rawText }) {
 
         if (type === 'code-block') {
             formattedItem = (
-                <div key={index} className={`${className} px-5 pt-3 pb-5 mt-10 rounded-lg bg-[#1a2b34]`}>
+                <div key={index} className={`${className} px-5 pt-3 pb-5 mt-10 rounded-lg bg-[#1a2b34] mb-10`}>
                     <pre>
-                        <code key={index} className='text-codeblock overflow-x-auto'>{formattedItem.map((item) => <React.Fragment key={item}>{item}</React.Fragment>)}</code>
+                        <code key={index} className='text-codeblock'>{formattedItem.map((item) => <React.Fragment key={item}>{item}</React.Fragment>)}</code>
                     </pre>
                 </div>
             );
