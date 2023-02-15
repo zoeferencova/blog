@@ -28,9 +28,7 @@ module.exports = {
       'posth4': '1.33rem',
       'blogtitle': '1.8rem'
     },
-    lineHeight: {
-      'rt': '1.75rem',
-    },
+
     extend: {
       // that is animation class
       animation: {
@@ -44,6 +42,10 @@ module.exports = {
           '100%': { opacity: 1 },
         },
       }),
+
+      lineHeight: {
+        'rt': '1.75rem',
+      },
     },
   },
   plugins: [

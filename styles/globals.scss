@@ -260,3 +260,14 @@ h3+h4 {
 h3+p {
     margin-top: 2.2rem !important;
 }
+
+@media only screen and (max-width: 700px) {
+
+    p+img {
+        padding-top: 0rem !important;
+    }
+
+    h3+p {
+        margin-top: 1.8rem !important;
+    }
+}

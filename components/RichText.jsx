@@ -43,9 +43,9 @@ function RichText({ rawText }) {
         }
 
         // Convert object to JSX by type
-        if (type === 'heading-three') formattedItem = (<h3 key={index} className={`${className} text-[1.7rem] font-medium pt-16`}>{formattedItem}</h3>);
-        if (type === 'heading-four') formattedItem = (<h4 key={index} className={`${className} text-posth4 font-medium pt-14`}>{formattedItem}</h4>);
-        if (type === 'paragraph') formattedItem = (<p key={index} className={`${className} text-base sm:text-rtbase mt-4 sm:mt-6 leading-rt`}>{formattedItem}</p>);
+        if (type === 'heading-three') formattedItem = (<h3 key={index} className={`${className} text-[1.7rem] font-medium pt-14 sm:pt-16`}>{formattedItem}</h3>);
+        if (type === 'heading-four') formattedItem = (<h4 key={index} className={`${className} text-posth4 font-medium pt-12 sm:pt-14`}>{formattedItem}</h4>);
+        if (type === 'paragraph') formattedItem = (<p key={index} className={`${className} text-base sm:text-rtbase mt-4 sm:mt-6 leading-relaxed sm:leading-rt`}>{formattedItem}</p>);
         if (type === 'image') formattedItem = (<img key={index} alt={obj.title} height={obj.height} width={obj.width} src={obj.src} className={`${className} mt-12`} />);
 
         if (type === 'code-block') {
