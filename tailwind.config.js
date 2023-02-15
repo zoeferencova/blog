@@ -11,7 +11,7 @@ module.exports = {
       'serif': ['Source Serif Pro', 'Georgia'],
     },
     fontSize: {
-      'rtbase': '1.06rem',
+      'rtbase': '1.1rem',
       'rtsm': '0.92rem',
       'xs': '0.75rem',
       'sm': '0.8rem',
@@ -25,11 +25,11 @@ module.exports = {
       'codeblock': '0.85rem',
       'pgtitle': '2.5rem',
       'subtitle': '1.4rem',
-      'posth4': '1.28rem',
+      'posth4': '1.33rem',
       'blogtitle': '1.8rem'
     },
     lineHeight: {
-      'rt': '1.67rem',
+      'rt': '1.75rem',
     },
     extend: {
       // that is animation class

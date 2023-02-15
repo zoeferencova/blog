@@ -235,3 +235,17 @@ body>* {
         width: 15px;
     }
 }
+
+img+p,
+.codeblock+p {
+    padding-top: 1.4rem;
+}
+
+p+img,
+p+.codeblock {
+    padding-top: 0.8rem !important;
+}
+
+p+h4 {
+    margin-top: -10px;
+}

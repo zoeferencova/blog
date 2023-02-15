@@ -43,14 +43,14 @@ function RichText({ rawText }) {
         }
 
         // Convert object to JSX by type
-        if (type === 'heading-three') formattedItem = (<h3 key={index} className={`${className} text-[1.7rem] font-medium mb-5 sm:mb-7 pt-6`}>{formattedItem}</h3>);
-        if (type === 'heading-four') formattedItem = (<h4 key={index} className={`${className} text-posth4 font-medium pt-6 mb-6`}>{formattedItem}</h4>);
-        if (type === 'paragraph') formattedItem = (<p key={index} className={`${className} text-base sm:text-rtbase mb-5 sm:mb-6 leading-rt`}>{formattedItem}</p>);
-        if (type === 'image') formattedItem = (<img key={index} alt={obj.title} height={obj.height} width={obj.width} src={obj.src} className={`${className} mt-5 mb-6 sm:my-10`} />);
+        if (type === 'heading-three') formattedItem = (<h3 key={index} className={`${className} text-[1.7rem] font-medium pt-16`}>{formattedItem}</h3>);
+        if (type === 'heading-four') formattedItem = (<h4 key={index} className={`${className} text-posth4 font-medium pt-14`}>{formattedItem}</h4>);
+        if (type === 'paragraph') formattedItem = (<p key={index} className={`${className} text-base sm:text-rtbase mt-4 sm:mt-6 leading-rt`}>{formattedItem}</p>);
+        if (type === 'image') formattedItem = (<img key={index} alt={obj.title} height={obj.height} width={obj.width} src={obj.src} className={`${className} mt-12`} />);
 
         if (type === 'code-block') {
             formattedItem = (
-                <div key={index} className={`${className} px-5 pt-3 pb-5 mt-10 rounded-lg bg-[#1a2b34] mb-10`}>
+                <div key={index} className={`${className} px-5 py-4 mt-10 rounded-lg bg-[#1a2b34] codeblock`}>
                     <pre>
                         <code key={index} className={`${className} text-codeblock`}>{formattedItem.map((item) => <React.Fragment key={item}>{item}</React.Fragment>)}</code>
                     </pre>
@@ -61,7 +61,7 @@ function RichText({ rawText }) {
         if (type === 'block-quote') {
             const splitText = text[0].split(/\s*[\[\]]\s*/).filter(Boolean);
             formattedItem = (
-                <Card key={index} className='mb-5 hover:bg-white hover:cursor-auto'>
+                <Card key={index} className='mt-5 hover:bg-white hover:cursor-auto'>
                     <h5 className='text-lg sm:text-xl font-serif text-gray-900 dark:text-white'>
                         {splitText[0]}
                     </h5>
@@ -74,9 +74,9 @@ function RichText({ rawText }) {
 
         if (type === 'bulleted-list') {
             formattedItem = (
-                <ul key={index} className='list-disc ml-6 sm:ml-10 pb-3 sm:pb-5 sm:pt-2'>
+                <ul key={index} className='list-disc ml-6 sm:ml-10 pt-3 sm:pt-6'>
                     {obj.children.map((bulletPoint, index) => (
-                        <li key={index} className='text-base sm:text-rtbase pl-3 mb-3 sm:mb-4'>{bulletPoint.children[0].children.map((item, index) => getContentFragment(index, item.text, item))}</li>
+                        <li key={index} className='text-base sm:text-rtbase pl-3 mb-3 sm:mb-3'>{bulletPoint.children[0].children.map((item, index) => getContentFragment(index, item.text, item))}</li>
                     ))}
                 </ul>
             );

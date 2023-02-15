@@ -10,7 +10,7 @@ const LearningPage = ({ topic }) => {
                 <title>{topic.name}</title>
                 <link rel='icon' href='/../favicon.ico' />
             </Head>
-            <h1 className='pb-8 sm:pb-10 font-medium text-3xl sm:text-4xl'>{topic.name}</h1>
+            <h1 className='pb-6 sm:pb-6 font-medium text-3xl sm:text-4xl'>{topic.name}</h1>
             <RichText rawText={topic} />
         </div>
     )
