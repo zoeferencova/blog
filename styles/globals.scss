@@ -241,11 +241,22 @@ img+p,
     padding-top: 1.4rem;
 }
 
-p+img,
-p+.codeblock {
+p+img {
     padding-top: 0.8rem !important;
+}
+
+p+.codeblock {
+    margin-top: 1.9rem;
 }
 
 p+h4 {
     margin-top: -10px;
+}
+
+h3+h4 {
+    margin-top: -20px;
+}
+
+h3+p {
+    margin-top: 2.2rem !important;
 }
