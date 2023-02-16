@@ -32,7 +32,7 @@ function RichText({ rawText }) {
             if (obj.bold) formattedItem = (<b key={index}>{text}</b>);
             if (obj.italic) formattedItem = (<em key={index}>{text}</em>);
             if (obj.underline) formattedItem = (<u key={index}>{text}</u>);
-            if (obj.code) formattedItem = (<span key={index} className='bg-[#ededeb] rounded inline-block px-2 mx-1 font-mono text-code leading-[1.5rem] text-red-500 wrap'>{text}</span>);
+            if (obj.code) formattedItem = (<span key={index} className='bg-[#ededeb] rounded p-1 mx-1 font-mono break-all text-code leading-[1.5rem] text-red-500 wrap'>{text}</span>);
             if (obj.type === 'link') {
                 formattedItem = (
                     <a key={index} href={obj.href} target='_blank' className={`${className} border-b border-[#759dbd]/50 text-[#759dbd]`} rel='noreferrer'>
