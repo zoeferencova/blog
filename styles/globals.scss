@@ -96,7 +96,8 @@ body>* {
 .book-resource,
 .podcast-resource,
 .video-resource,
-.website-resource {
+.website-resource,
+.documentation-resource {
     font-size: 0.93rem !important;
     margin-bottom: 7px !important;
 }
@@ -105,7 +106,8 @@ body>* {
 .book-resource a,
 .podcast-resource a,
 .video-resource a,
-.website-resource a {
+.website-resource a,
+.documentation-resource a {
     color: rgb(31 41 55);
     border-bottom: 1px solid rgb(31 41 55);
 }
@@ -130,11 +132,16 @@ body>* {
     background-image: url('../images/website.png')
 }
 
+.documentation-resource::before {
+    background-image: url('../images/docs.png')
+}
+
 .article-resource::before,
 .book-resource::before,
 .podcast-resource::before,
 .video-resource::before,
-.website-resource::before {
+.website-resource::before,
+.documentation-resource::before {
     background-size: 25px;
     display: inline-block;
     width: 25px;

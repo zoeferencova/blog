@@ -2,10 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Link from 'next/link';
 
-function LinkList({
-    categoryTitle, icon, links, page,
-}) {
-    const linkStyles = 'text-rtsm text-gray-800 pb-[1px] border-solid border-1 border-b border-gray-500';
+function LinkList({ categoryTitle, icon, links, page }) {
+    const linkStyles = 'text-rtsm text-gray-800 pb-[1px] border-solid border-1 border-b border-gray-500 inline-block mt-3';
     return (
         <div className='mb-12 sm:mb-16'>
             <span className='flex'>
@@ -14,16 +12,19 @@ function LinkList({
             </span>
             {page === 'learning'
                 ? links.map((link) => (
-                    <Link
-                        href={`/learning/${link.slug}`}
-                        className={linkStyles}
-                        key={link.slug}
-                    >
-                        {link.name}
-                    </Link>
+                    <div key={link.slug}>
+                        <Link
+                            href={`/learning/${link.slug}`}
+                            className={linkStyles}
+                            key={link.slug}
+                        >
+                            {link.name}
+                        </Link>
+                        <br></br>
+                    </div>
                 ))
                 : links.map((link) => (
-                    <div key={link.raw.children[0].children[1].children[0].text} className='mb-3'>
+                    <div key={link.raw.children[0].children[1].children[0].text}>
                         <Link
                             href={link.raw.children[0].children[1].href}
                             className={linkStyles}
