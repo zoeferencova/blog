@@ -1,12 +1,17 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
-import hljs from 'highlight.js';
 import { Carousel, Card } from 'flowbite-react';
+import Prism from 'prismjs'
+import "prismjs/components/prism-python";
+import "prismjs/components/prism-bash";
+
 
 function RichText({ rawText }) {
     useEffect(() => {
-        hljs.highlightAll();
-    });
+        if (typeof window !== 'undefined') {
+            Prism.highlightAll();
+        }
+    }, []);
 
     const images = [];
 
@@ -32,7 +37,7 @@ function RichText({ rawText }) {
             if (obj.bold) formattedItem = (<b key={index}>{text}</b>);
             if (obj.italic) formattedItem = (<em key={index}>{text}</em>);
             if (obj.underline) formattedItem = (<u key={index}>{text}</u>);
-            if (obj.code) formattedItem = (<span key={index} className='bg-[#ededeb] rounded p-1 mx-1 font-mono break-all text-code leading-[1.5rem] text-red-500 wrap'>{text}</span>);
+            if (obj.code) formattedItem = (<span key={index} className='bg-[#ededeb] rounded p-1 mx-1 font-mono break-word text-code leading-[1.5rem] text-red-500 wrap'>{text}</span>);
             if (obj.type === 'link') {
                 formattedItem = (
                     <a key={index} href={obj.href} target='_blank' className={`${className} border-b border-[#759dbd]/50 text-[#759dbd]`} rel='noreferrer'>
@@ -50,11 +55,9 @@ function RichText({ rawText }) {
 
         if (type === 'code-block') {
             formattedItem = (
-                <div key={index} className={`${className} px-5 py-4 mt-10 rounded-lg bg-[#1a2b34] codeblock`}>
-                    <pre>
-                        <code key={index} className={`${className} text-codeblock`}>{formattedItem.map((item) => <React.Fragment key={item}>{item}</React.Fragment>)}</code>
-                    </pre>
-                </div>
+                <pre key={index} className={`mt-10 rounded-lg codeblock`}>
+                    {formattedItem.map((item) => <code className={`${className}`} key={item}>{item}</code>)}
+                </pre>
             );
         }
 

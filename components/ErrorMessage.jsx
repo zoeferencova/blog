@@ -19,5 +19,5 @@ ErrorMessage.defaultProps = {
 
 ErrorMessage.propTypes = {
     messageTitle: PropTypes.string,
-    messageSubtitle: PropTypes.string,
+    messageSubtitle: PropTypes.object,
 };
