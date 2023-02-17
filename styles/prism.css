@@ -1,12 +1,11 @@
 /* PrismJS 1.29.0
-https://prismjs.com/download.html#themes=prism&languages=markup+css+clike+javascript+bash+python */
+https://prismjs.com/download.html#themes=prism&languages=markup+css+clike+javascript+json+json5 */
 code[class*=language-],
 pre[class*=language-] {
     color: #000;
     background: 0 0;
     text-shadow: 0 1px #fff;
-    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-    font-size: 0.82rem;
+    font-size: 0.86rem;
     text-align: left;
     white-space: pre;
     word-spacing: normal;
@@ -19,7 +18,7 @@ pre[class*=language-] {
     -webkit-hyphens: none;
     -moz-hyphens: none;
     -ms-hyphens: none;
-    hyphens: none;
+    hyphens: none
 }
 
 code[class*=language-] ::-moz-selection,
@@ -54,7 +53,7 @@ pre[class*=language-] {
 
 :not(pre)>code[class*=language-],
 pre[class*=language-] {
-    background: #f5f2f0
+    background: #f7f6f3;
 }
 
 :not(pre)>code[class*=language-] {

@@ -4,7 +4,7 @@ import { Carousel, Card } from 'flowbite-react';
 import Prism from 'prismjs'
 import "prismjs/components/prism-python";
 import "prismjs/components/prism-bash";
-
+import "prismjs/components/prism-json";
 
 function RichText({ rawText }) {
     useEffect(() => {
@@ -56,7 +56,7 @@ function RichText({ rawText }) {
         if (type === 'code-block') {
             formattedItem = (
                 <pre key={index} className={`mt-10 rounded-lg codeblock`}>
-                    {formattedItem.map((item) => <code className={`${className}`} key={item}>{item}</code>)}
+                    {formattedItem.map((item) => <code className={`${className} font-mono font-medium`} key={item}>{item}</code>)}
                 </pre>
             );
         }
