@@ -12,7 +12,7 @@ function LinkList({ categoryTitle, icon, links, page }) {
             </span>
             {page === 'learning'
                 ? links.map((link) => (
-                    <div key={link.slug} className='mb-2'>
+                    <div key={link.slug} className='mb-2 block'>
                         <Link
                             href={`/learning/${link.slug}`}
                             className={linkStyles}
@@ -23,7 +23,7 @@ function LinkList({ categoryTitle, icon, links, page }) {
                     </div>
                 ))
                 : links.map((link) => (
-                    <div key={link.raw.children[0].children[1].children[0].text} className='mb-3 sm:mb-2'>
+                    <div key={link.raw.children[0].children[1].children[0].text} className='mb-3 sm:mb-2 block'>
                         <Link
                             href={link.raw.children[0].children[1].href}
                             className={linkStyles}
