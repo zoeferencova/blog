@@ -7,7 +7,7 @@ const PostPage = ({ post }) => {
     return (
         <div className='mb-10 mx-auto max-w-[44rem] pt-5 transition animate-fade'>
             <Head>
-                <title>{post.title}</title>
+                <title>{post.title} </title>
                 <link rel='icon' href='/../favicon.ico' />
             </Head>
             <PostDetails post={post} />

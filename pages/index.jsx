@@ -32,7 +32,6 @@ export default function Home({ posts }) {
       <Head>
         <title>Tada Blog: Exploring Web-based Data Visualization</title>
         <link rel='icon' href='/favicon.ico' />
-        <link rel="stylesheet" href="https://use.typekit.net/obm4uuk.css" />
       </Head>
       {categories.length
         ? (
