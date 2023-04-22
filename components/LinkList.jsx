@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Link from 'next/link';
 
 function LinkList({ categoryTitle, icon, links, page }) {
-    const linkStyles = 'text-rtsm text-gray-800 text-red-500 pb-[1px] underline underline-offset-4 leading-[1.5rem] block';
+    const linkStyles = 'text-rtsm text-gray-800 text-red-600 pb-[1px] underline underline-offset-4 leading-[1.5rem] block';
     return (
         <div className='mb-12 sm:mb-16'>
             <span className='flex'>
