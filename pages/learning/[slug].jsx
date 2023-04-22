@@ -19,8 +19,7 @@ const LearningPage = ({ topic }) => {
 export default LearningPage
 
 export async function getStaticPaths() {
-    const topicCategories = (await getLearningTopics()) || [];
-    const paths = topicCategories.map(cat => cat.topics.map(topic => ({ params: { slug: topic.slug } }))).flat()
+    const paths = await getLearningTopics().then(res => res.map(cat => cat.topics.map(topic => ({ params: { slug: topic.slug } }))).flat())
     return {
         paths,
         fallback: false
