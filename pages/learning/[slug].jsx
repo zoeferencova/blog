@@ -23,7 +23,7 @@ export async function getStaticPaths() {
     const paths = topicCategories.map(cat => cat.topics.map(topic => ({ params: { slug: topic.slug } }))).flat()
     return {
         paths,
-        fallback: false
+        fallback: true
     };
 }
 
