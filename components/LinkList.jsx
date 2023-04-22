@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Link from 'next/link';
 
 function LinkList({ categoryTitle, icon, links, page }) {
-    const linkStyles = 'text-rtsm text-gray-800 text-red-600 pb-[1px] underline underline-offset-4 leading-[1.5rem] block';
+    const linkStyles = 'text-rtsm text-gray-800 pb-[1px] underline underline-offset-4 leading-[1.5rem]';
     return (
         <div className='mb-12 sm:mb-16'>
             <span className='flex'>
@@ -12,7 +12,7 @@ function LinkList({ categoryTitle, icon, links, page }) {
             </span>
             {page === 'learning'
                 ? links.map((link) => (
-                    <div key={link.slug} className='mb-2 block'>
+                    <div key={link.slug} className='mb-2'>
                         <Link
                             href={`/learning/${link.slug}`}
                             className={linkStyles}
