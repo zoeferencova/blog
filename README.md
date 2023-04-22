@@ -1,8 +1,7 @@
 # Tada Blog
 Exploring web-based data visualization
 
-Live Site
-[live site image]
+Live site: https://www.tada-blog.xyz
 
 ## Summary
 
