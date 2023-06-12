@@ -9,7 +9,7 @@ module.exports = {
   theme: {
     fontFamily: {
       'serif': ['Source Serif Pro', 'Georgia'],
-      'mono': ['Menlo', 'Inconsolata'],
+      'mono': ['DM Mono', 'Inconsolata'],
     },
     fontSize: {
       'rtbase': '1.1rem',
