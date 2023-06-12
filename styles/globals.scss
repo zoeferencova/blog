@@ -4,6 +4,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital@0;1&display=swap');
 @import url("https://use.typekit.net/obm4uuk.css");
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono&display=swap');
 
 @font-face {
     font-family: "SF Display";
@@ -32,7 +33,7 @@ body {
 }
 
 .font-mono {
-    font-family: ui-monospace, "SFMono-Regular", "Menlo", "Monaco", "Consolas", "Liberation Mono", "Courier New", monospace;
+    font-family: 'DM Mono', ui-monospace, "SFMono-Regular", "Menlo", "Monaco", "Consolas", "Liberation Mono", "Courier New", monospace;
 }
 
 %smooth-fonts {
